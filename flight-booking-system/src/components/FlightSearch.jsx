@@ -80,10 +80,8 @@ const FlightSearch = () => {
     <Box
       sx={{
         flexGrow: 1,
-        marginTop: "100px",
+        marginTop: 2,
         padding: "20px",
-        border: "2px solid black",
-        margin: "5px",
       }}
     >
       <Grid container spacing={2}>
@@ -203,8 +201,8 @@ const FlightSearch = () => {
           </FormControl>
         </Grid>
 
-         {/* Search Button */}
-         <Grid item xs={12} sm={6} md={3}>
+        {/* Search Button */}
+        <Grid item xs={12} sm={6} md={3}>
           <Button
             sx={{ width: "100%", height: "100%" }}
             variant="contained"
