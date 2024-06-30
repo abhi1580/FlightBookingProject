@@ -31,17 +31,17 @@ const FlightSearch = () => {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const resetFlightDetails = () => {
-    setFlightDetails({
-      from: "",
-      to: "",
-      departureDate: null,
-      returnDate: null,
-      returnTrip: false,
-      flightClass: "",
-      travellers: 1,
-    });
-  };
+  // const resetFlightDetails = () => {
+  //   setFlightDetails({
+  //     from: "",
+  //     to: "",
+  //     departureDate: null,
+  //     returnDate: null,
+  //     returnTrip: false,
+  //     flightClass: "",
+  //     travellers: 1,
+  //   });
+  // };
 
   const handleChangeFlightDetails = (field, value) => {
     setFlightDetails((prev) => ({
@@ -105,7 +105,7 @@ const FlightSearch = () => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, marginTop: 2, padding: "20px" }}>
+    <Box sx={{ flexGrow: 1, marginTop: 9, padding: "20px" }}>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6} md={3}>
@@ -188,6 +188,7 @@ const FlightSearch = () => {
             <FormControl fullWidth>
               <InputLabel>Class</InputLabel>
               <Select
+                label="Class"
                 required
                 name="flightClass"
                 value={flightDetails.flightClass}

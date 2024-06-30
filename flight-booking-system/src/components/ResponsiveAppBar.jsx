@@ -32,7 +32,7 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <AppBar sx={{ background: "none" }} position="static">
+      <AppBar sx={{ background: "none" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -103,8 +103,8 @@ function ResponsiveAppBar() {
                       sx={{
                         color: "inherit",
                         textDecoration: "none",
-                        "&:hover": {
-                          textDecoration: "underline",
+                        '&:hover': {
+                          textDecoration: 'underline',
                         },
                       }}
                     >
@@ -137,8 +137,8 @@ function ResponsiveAppBar() {
                       fontFamily: "Segoe UI",
                       fontWeight: 500,
                       letterSpacing: ".1rem",
-                      "&:hover": {
-                        textDecoration: "none",
+                      '&:hover': {
+                        textDecoration: 'none',
                       },
                     }}
                   >
