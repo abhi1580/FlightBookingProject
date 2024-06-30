@@ -1,6 +1,6 @@
 //A component to show single card of avalaible flight
 import React from "react";
-import { Grid,  Button, Typography } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 
 const FlightResultCard = ({ cardData }) => {
   // console.log(cardData.duration)

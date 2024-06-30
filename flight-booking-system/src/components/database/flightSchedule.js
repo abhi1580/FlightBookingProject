@@ -361,8 +361,8 @@ const flightSchedule = [
     duration: "1h 30m",
     rate: 3500,
     departure_date: "01-08-2024",
-    departure_time: "7:45 AM",
-    landing_time: "9:15 AM",
+    departure_time: "8:00 AM",
+    landing_time: "9:30 AM",
   },
   {
     id: 31,

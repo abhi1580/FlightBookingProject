@@ -103,8 +103,8 @@ function ResponsiveAppBar() {
                       sx={{
                         color: "inherit",
                         textDecoration: "none",
-                        '&:hover': {
-                          textDecoration: 'underline',
+                        "&:hover": {
+                          textDecoration: "underline",
                         },
                       }}
                     >
@@ -137,8 +137,8 @@ function ResponsiveAppBar() {
                       fontFamily: "Segoe UI",
                       fontWeight: 500,
                       letterSpacing: ".1rem",
-                      '&:hover': {
-                        textDecoration: 'none',
+                      "&:hover": {
+                        textDecoration: "none",
                       },
                     }}
                   >

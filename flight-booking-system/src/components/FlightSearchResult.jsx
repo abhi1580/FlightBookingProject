@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 
 import flightSchedule from "./database/flightSchedule";
 import FlightResultCard from "./FlightResultCard";
-import {Grid} from "@mui/material"
+import { Grid } from "@mui/material";
 
 const FlightSearchResult = ({ flight }) => {
   const formatDayjsDate = (date) => {
@@ -13,15 +13,14 @@ const FlightSearchResult = ({ flight }) => {
   };
   const propDate = formatDayjsDate(flight.departureDate);
 
-  const fs = flightSchedule.filter((f) => f.departure_date === propDate);
+  const fs = flightSchedule.filter((f) =>f.from===flight.from&&f.to===flight.to&& f.departure_date === propDate);
   const singleS = fs.map((sf) => (
-    <FlightResultCard key={sf.id} cardData={sf} departureDate={propDate}/>
+    <FlightResultCard key={sf.id} cardData={sf} departureDate={propDate} />
   ));
-//   console.log(fs);
+  //   console.log(fs);
   return (
     <Grid item xs={12} sm={6} md={3}>
-
-        {singleS}
+      {singleS}
     </Grid>
   );
 };
