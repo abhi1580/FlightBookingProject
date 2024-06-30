@@ -1,13 +1,44 @@
 //A component to show single card of avalaible flight
 import React from "react";
-import SG from "./airlinelogos/SG.png"
-import { Grid } from "@mui/material";
+import { Grid,  Button, Typography } from "@mui/material";
 
-const FlightResultcard = () => {
-  return <Grid item xs={12} sm={6} md={3}>
+const FlightResultCard = ({ cardData }) => {
+  // console.log(cardData.duration)
+  return (
+    <Grid container sx={{ padding: "10px ", margin: "1%" }} spacing={2}>
+      <Grid item xs={1}>
+        <img src={cardData.airline_logo} alt="img" />
+      </Grid>
+      <Grid item xs={2}>
+        <Typography>{cardData.airline_name}</Typography>
+        <Typography>{cardData.departure_date}</Typography>
+      </Grid>
+      <Grid item xs={2}>
+        <Typography>{cardData.departure_time}</Typography>
+        <Typography>{cardData.from}</Typography>
+      </Grid>
 
-<img src={SG} alt="img"/>
-  </Grid>;
+      <Grid item xs={2}>
+        <Typography>Duration</Typography>
+        <Typography>{cardData.duration}</Typography>
+      </Grid>
+      <Grid item xs={2}>
+        <Typography>{cardData.landing_time}</Typography>
+        <Typography>{cardData.to}</Typography>
+      </Grid>
+
+      <Grid item xs={2} padding={2}>
+        <Button
+          type="submit"
+          sx={{ width: "50%", height: "100%" }}
+          variant="contained"
+          color="primary"
+        >
+          Book
+        </Button>
+      </Grid>
+    </Grid>
+  );
 };
 
-export default FlightResultcard;
+export default FlightResultCard;

@@ -17,7 +17,6 @@ import { LocalizationProvider, DatePicker } from "@mui/x-date-pickers";
 import dayjs from "dayjs";
 import airportData from "./database/airportData";
 import FlightSearchResult from "./FlightSearchResult";
-import FlightResultcard from "./FlightResultcard";
 
 const FlightSearch = () => {
   const [flightDetails, setFlightDetails] = useState({
@@ -30,11 +29,26 @@ const FlightSearch = () => {
     travellers: 1,
   });
 
+  const [submitted, setSubmitted] = useState(false);
+
+  const resetFlightDetails = () => {
+    setFlightDetails({
+      from: "",
+      to: "",
+      departureDate: null,
+      returnDate: null,
+      returnTrip: false,
+      flightClass: "",
+      travellers: 1,
+    });
+  };
+
   const handleChangeFlightDetails = (field, value) => {
     setFlightDetails((prev) => ({
       ...prev,
       [field]: value,
     }));
+    setSubmitted(false);
   };
 
   const handleChangeReturnTrip = (event) => {
@@ -44,10 +58,7 @@ const FlightSearch = () => {
       returnTrip: isChecked,
       returnDate: isChecked ? prev.returnDate : null,
     }));
-  };
-
-  const formatDayjsDate = (date) => {
-    return date ? dayjs(date).format("DD-MM-YYYY") : null;
+    setSubmitted(false);
   };
 
   const handleDateChange = (date, field) => {
@@ -55,6 +66,7 @@ const FlightSearch = () => {
       ...prev,
       [field]: date instanceof Date || dayjs.isDayjs(date) ? date : null,
     }));
+    setSubmitted(false);
   };
 
   const handleTravellersChange = (event) => {
@@ -62,12 +74,12 @@ const FlightSearch = () => {
     if (value >= 1 && value <= 20) {
       handleChangeFlightDetails("travellers", value);
     }
+    setSubmitted(false);
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault();
 
-    // Validation
     const { from, to, departureDate, returnDate, returnTrip } = flightDetails;
     if (!from || !to || !departureDate || (returnTrip && !returnDate)) {
       alert("Please fill out all required fields.");
@@ -89,9 +101,7 @@ const FlightSearch = () => {
       return;
     }
 
-    // If all validations pass, proceed with search logic
-    // console.log(flightDetails.returnDate.$d)
-    // Implement your search logic here
+    setSubmitted(true);
   };
 
   return (
@@ -106,13 +116,10 @@ const FlightSearch = () => {
                 `${option.airport_name} (${option.IATA_code})`
               }
               onChange={(event, value) =>
-                handleChangeFlightDetails(
-                  "from",
-                  value ? value.IATA_code : ""
-                )
+                handleChangeFlightDetails("from", value ? value.IATA_code : "")
               }
               renderInput={(params) => (
-                <TextField {...params} label="From" fullWidth />
+                <TextField {...params} name="from" label="From" fullWidth />
               )}
             />
           </Grid>
@@ -127,7 +134,7 @@ const FlightSearch = () => {
                 handleChangeFlightDetails("to", value ? value.IATA_code : "")
               }
               renderInput={(params) => (
-                <TextField {...params} label="To" fullWidth />
+                <TextField {...params} name="to" label="To" fullWidth />
               )}
             />
           </Grid>
@@ -135,6 +142,7 @@ const FlightSearch = () => {
             <FormControlLabel
               control={
                 <Checkbox
+                  name="returnTrip"
                   checked={flightDetails.returnTrip}
                   onChange={handleChangeReturnTrip}
                 />
@@ -168,6 +176,7 @@ const FlightSearch = () => {
           <Grid item xs={12} sm={6} md={3}>
             <TextField
               label="Travellers"
+              name="travellers"
               type="number"
               inputProps={{ min: 1, max: 20 }}
               value={flightDetails.travellers}
@@ -180,6 +189,7 @@ const FlightSearch = () => {
               <InputLabel>Class</InputLabel>
               <Select
                 required
+                name="flightClass"
                 value={flightDetails.flightClass}
                 onChange={(event) =>
                   handleChangeFlightDetails("flightClass", event.target.value)
@@ -203,12 +213,7 @@ const FlightSearch = () => {
           </Grid>
         </Grid>
       </form>
-      <Grid container marginTop={3} spacing={2}>
-        <Grid item xs={12} sm={6} md={3}>
-          <FlightSearchResult flight={flightDetails}/>
-          <FlightResultcard/>
-        </Grid>
-      </Grid>
+      {submitted && <FlightSearchResult flight={flightDetails} />}
     </Box>
   );
 };

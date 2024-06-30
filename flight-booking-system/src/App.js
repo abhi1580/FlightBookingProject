@@ -1,4 +1,5 @@
 import './App.css';
+import FlightResultCard from './components/FlightResultCard';
 // import DemoIcon from './components/DemoIcon';
 // import FlightSearch from './components/FlightSearch';
 // import LoginForm from './components/LoginForm';
@@ -10,9 +11,10 @@ function App() {
     <div className="container">
       {/* <DemoIcon/> */}
       {/* <ResponsiveAppBar/> */}
-      <FBSRouter/>
+       <FBSRouter/> 
       {/* <FlightSearch/> */}
       {/* <LoginForm/> */}
+      {/* <FlightResultCard/> */}
 
     </div>
   );
