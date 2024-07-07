@@ -1,10 +1,13 @@
-import "./App.css";
-import FBSRouter from "./routing/FBSRouter";
+// import FlightSchedule from "./components/FlightSchedule";
+
+import Demo from "./components/Demo";
 
 function App() {
   return (
-    <div className="container">
-      <FBSRouter />
+    <div>
+      <Demo />
+    
+
     </div>
   );
 }

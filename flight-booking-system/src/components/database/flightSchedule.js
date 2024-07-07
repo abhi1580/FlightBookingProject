@@ -3,6 +3,7 @@ import indigo from "../airlinelogos/indigo.png";
 import vistara from "../airlinelogos/vistara.png";
 import airIndia from "../airlinelogos/airIndia.png";
 import akasaAir from "../airlinelogos/akasaAir.png";
+
 const flightSchedule = [
   {
     id: 1,
@@ -211,7 +212,7 @@ const flightSchedule = [
   {
     id: 18,
     airline_logo: spicejet,
-    airline_name: "Spicejet",
+    airline_name: "SpiceJet",
     from: "VGA",
     to: "BHU",
     duration: "1h 30m",
