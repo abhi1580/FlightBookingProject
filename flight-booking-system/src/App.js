@@ -1,10 +1,13 @@
+import React from "react";
 import "./App.css";
-import FBSRouter from "./routing/FBSRouter";
+import FeedBackForm from "./component/FeedBackForm";
+import FlightGallary from "./component/carousel/FlightGallary";
 
 function App() {
   return (
-    <div className="container">
-      <FBSRouter />
+    <div className="App">
+      {/* <FeedBackForm/>  */}
+      <FlightGallary />
     </div>
   );
 }
