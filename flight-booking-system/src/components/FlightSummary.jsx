@@ -4,6 +4,9 @@ import dayjs from "dayjs";
 import AddPassengerDetails from "./AddPassengerDetails";
 
 const FlightSummary = ({ departureTrip, returnTrip, totalFare }) => {
+  console.log("Departure data :",departureTrip)
+  console.log("ReturnTrip data :",returnTrip)
+  console.log("Total Fare data :",totalFare)
   const [showPassengerDetails, setShowPassengerDetails] = useState(false);
 
   const handleAddPassengerDetails = () => {
@@ -40,7 +43,7 @@ const FlightSummary = ({ departureTrip, returnTrip, totalFare }) => {
           </Typography>
           <Typography variant="body1">
             <strong>Departure Date:</strong>{" "}
-            {formatDayjsDate(departureTrip.departureDate)}
+            {(departureTrip.departureDate)}
           </Typography>
           <Typography variant="body1">
             <strong>Travellers:</strong> {departureTrip.travellers}
@@ -68,7 +71,7 @@ const FlightSummary = ({ departureTrip, returnTrip, totalFare }) => {
             </Typography>
             <Typography variant="body1">
               <strong>Return Date:</strong>{" "}
-              {formatDayjsDate(returnTrip.returnDate)}
+              {(returnTrip.returnDate)}
             </Typography>
             <Typography variant="body1">
               <strong>Travellers:</strong> {returnTrip.travellers}

@@ -103,7 +103,7 @@ const FlightSearchResult = ({ flight }) => {
           ))}
         </Grid>
       )}
-      {!showSummary && totalFare > 0 && (
+      {!showSummary && totalFare*flight.travellers > 0 && (
         <Card
           sx={{
             position: "fixed", // Changed from "sticky" to "fixed"
@@ -121,7 +121,7 @@ const FlightSearchResult = ({ flight }) => {
               variant="outlined"
               onClick={toggleSummary}
             >
-              Total Fare: &#8377;{totalFare}
+              Total Fare: &#8377;{totalFare*flight.travellers}
               <NavigateNextSharpIcon />
             </Button>
           </CardContent>
@@ -132,7 +132,7 @@ const FlightSearchResult = ({ flight }) => {
         <FlightSummary
           departureTrip={departureTripDetails}
           returnTrip={returnTripDetails}
-          totalFare={totalFare}
+          totalFare={totalFare*flight.travellers}
         />
       )}
     </div>

@@ -32,7 +32,7 @@ function ResponsiveAppBar() {
 
   return (
     <>
-      <AppBar sx={{ background: "none" }}>
+      <AppBar sx={{ background: "" }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Box sx={{ display: "flex", alignItems: "center" }}>
