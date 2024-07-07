@@ -1,12 +1,26 @@
-import "./App.css";
-import FBSRouter from "./routing/FBSRouter";
+
+import './App.css';
+import LoginForm from './Components/LoginForm';
+import SignUp from './Components/SignUp';
+import ForgotPasswordForm from './Components/ForgotPasswordForm';
+
+
 
 function App() {
   return (
-    <div className="container">
-      <FBSRouter />
-    </div>
+    <>
+      <LoginForm/>
+      <SignUp/> 
+      <ForgotPasswordForm/>
+      
+    </>
+    
+
   );
+
+
 }
+
+
 
 export default App;
