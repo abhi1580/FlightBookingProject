@@ -1,0 +1,28 @@
+const allBanks = [
+    { value: 'sbi', label: 'State Bank Of India' },
+    { value: 'icici', label: 'ICICI Bank' },
+    { value: 'hdfc', label: 'HDFC Bank' },
+    { value: 'axis', label: 'Axis Bank' },
+    { value: 'kotak', label: 'Kotak Mahindra Bank' },
+    { value: 'pnb', label: 'Punjab National Bank' },
+    { value: 'bob', label: 'Bank of Baroda' },
+    { value: 'canara', label: 'Canara Bank' },
+    { value: 'indusind', label: 'IndusInd Bank' },
+    { value: 'yes', label: 'Yes Bank' },
+    { value: 'union', label: 'Union Bank of India' },
+    { value: 'idbi', label: 'IDBI Bank' },
+    { value: 'rbl', label: 'RBL Bank' },
+    { value: 'bank_of_maharashtra', label: 'Bank of Maharashtra' },
+    { value: 'uco', label: 'UCO Bank' },
+    { value: 'central', label: 'Central Bank of India' },
+    { value: 'indian_bank', label: 'Indian Bank' },
+    { value: 'indian_overseas', label: 'Indian Overseas Bank' },
+    { value: 'syndicate', label: 'Syndicate Bank' },
+    { value: 'corporation', label: 'Corporation Bank' },
+    { value: 'andhra', label: 'Andhra Bank' },
+    { value: 'allahabad', label: 'Allahabad Bank' },
+    { value: 'j&k', label: 'Jammu & Kashmir Bank' },
+    { value: 'karur_vysya', label: 'Karur Vysya Bank' },
+    { value: 'south_indian', label: 'South Indian Bank' }
+  ];
+export default allBanks
